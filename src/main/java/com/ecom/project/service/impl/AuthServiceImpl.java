@@ -157,7 +157,8 @@ String otp= OtpUtil.generateOtp();
       if (verificationCode==null){
           throw new BadCredentialsException("wrong otp");
       }
-        return null;
+        return new UsernamePasswordAuthenticationToken(userDetails,
+                null,userDetails.getAuthorities());
     }
 
 }

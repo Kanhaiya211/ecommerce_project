@@ -1,5 +1,6 @@
 package com.ecom.project.controller;
 
+import com.ecom.project.request.LoginRequest;
 import com.ecom.project.response.ApiResponse;
 import com.ecom.project.response.AuthResponse;
 import com.ecom.project.response.SignUpRequest;
@@ -51,12 +52,12 @@ public class AuthController {
 
     }
 
-//    @PostMapping("/signin")
-//    public ResponseEntity<AuthResponse> signin(@RequestBody LoginRequest loginRequest) throws SellerException {
-//
-//        AuthResponse authResponse = authService.signin(loginRequest);
-//        return new ResponseEntity<>(authResponse, HttpStatus.OK);
-//    }
+    @PostMapping("/signin")
+    public ResponseEntity<AuthResponse> signin(@RequestBody LoginRequest loginRequest) throws Exception {
+
+        AuthResponse authResponse = authService.signing(loginRequest);
+        return new ResponseEntity<>(authResponse, HttpStatus.OK);
+    }
 
 
 

@@ -56,15 +56,5 @@ public class User {
 
 
 
-    public String getEmail() {
-        return email;
-    }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public USER_ROLE getRole() {
-        return role;
-    }
 }
