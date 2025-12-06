@@ -5,6 +5,7 @@ import com.ecom.project.domain.AccountStatus;
 import com.ecom.project.domain.USER_ROLE;
 import com.ecom.project.entity.Address;
 import com.ecom.project.entity.Seller;
+import com.ecom.project.exceptions.SellerException;
 import com.ecom.project.repository.AddressRepository;
 import com.ecom.project.repository.SellerRepository;
 import com.ecom.project.service.SellerService;
@@ -56,8 +57,8 @@ public class SellerServiceImpl implements SellerService {
     }
 
     @Override
-    public Seller getSellerById(long id) throws Exception {
-        Seller seller=sellerRepository.findById(id).orElseThrow(()-> new Exception
+    public Seller getSellerById(long id) throws SellerException {
+        Seller seller=sellerRepository.findById(id).orElseThrow(()-> new SellerException
                 ("seller not found with id"+id));
         return seller ;
     }

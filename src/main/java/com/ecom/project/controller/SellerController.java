@@ -3,8 +3,8 @@ package com.ecom.project.controller;
 import com.ecom.project.config.JwtProvider;
 import com.ecom.project.domain.AccountStatus;
 import com.ecom.project.entity.Seller;
-import com.ecom.project.entity.SellerReport;
 import com.ecom.project.entity.VerificationCode;
+import com.ecom.project.exceptions.SellerException;
 import com.ecom.project.repository.VerificationCodeRepository;
 import com.ecom.project.service.EmailService;
 import com.ecom.project.service.SellerService;
@@ -60,7 +60,7 @@ public class SellerController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Seller> getSellerById(@PathVariable Long id)throws Exception{
+    public ResponseEntity<Seller> getSellerById(@PathVariable Long id)throws SellerException {
 
         Seller seller=sellerService.getSellerById(id);
 

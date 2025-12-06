@@ -150,6 +150,7 @@ String otp= OtpUtil.generateOtp();
 
     private Authentication authenticate(String username, String otp) {
       UserDetails userDetails= customUserService.loadUserByUsername(username);
+        System.out.println("sign in userDetails - " + userDetails);
       if(userDetails==null){
           throw new BadCredentialsException("Invalid username or Password");
       }
